@@ -1,13 +1,9 @@
+let URL = 'https://srflb.vercel.app/api/lb'
 /*
-    1- theme
-    2- button onclick of fatch data
-        - dom load
-        - fatch data for api
-        - display data
-        - alert dane
-        - Waiting 2s 
-        - finished and rest button
-**/
+    ui
+    dom 
+        
+*/
 function ui(json) {
     // display data
     document.querySelector('#sell').textContent = json.sell
@@ -34,4 +30,8 @@ async function srf() {
 
     // ui button and display data
     return ui(json[0])
-} 
+}
+function dark() {
+    let body = document.querySelector('body').classList.toggle('dark')
+    console.log(body);
+}

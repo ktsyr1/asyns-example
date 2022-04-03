@@ -1,5 +1,16 @@
+:root{
+    --bg: #fff;
+    --sh: #eee;
+    --text: #673AB7;
+}
+.dark{
+    --bg: #333;
+    --sh: #222; 
+    --text: #fff;
+    color: var(--text);
+} 
 body{
-    background-color: #eee;
+    background-color: var(--sh);
 }
 /* box optimize */
 .box{display: flex;}
@@ -13,8 +24,8 @@ body{
 }
  
 .ui{
-    box-shadow: 5px 5px 10px #ddd;
-    background-color: #fff;
+    box-shadow: 5px 5px 10px var(--sh);
+    background-color:var( --bg);
     border-radius: 10px;
     color: #03a9f4;
     padding: 10px;
@@ -31,7 +42,7 @@ button {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 5px 5px 10px #ddd;
+    box-shadow: 5px 5px 10px var(--sh);
 }
 
-b{color: #673AB7;}
+b ,h1 {color: var(--text);}
