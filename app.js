@@ -4,34 +4,19 @@ let URL = 'https://srflb.vercel.app/api/lb'
     dom 
         
 */
-function ui(json) {
-    // display data
-    document.querySelector('#sell').textContent = json.sell
-    document.querySelector('#buy').textContent = json.buy
-
-    // ui button
-    document.querySelector('.srf button').textContent = 'تم التحديث'
-
-    /*
-        Waiting for a Timeout
-        syntx setTimeout(handler, timeout)
-    */
-    setTimeout(() => {
-        document.querySelector('.srf button').textContent = ' تحديث'
-    }, 2000)
+function dark() {
+    document.querySelector('body').classList.toggle('dark')
 }
 
 async function srf() {
-    document.querySelector('.srf button').textContent = 'جاري التحديث'
+    let btn = document.querySelector('.srf button')
+    btn.textContent = 'Loading...'
+    let res = await fetch(URL)
+    let data = await res.json()
 
-    // fetch data 
-    let res = await fetch('https://srflb.vercel.app/api/lb')
-    let json = await res.json()
-
-    // ui button and display data
-    return ui(json[0])
-}
-function dark() {
-    let body = document.querySelector('body').classList.toggle('dark')
-    console.log(body);
+    document.querySelector('#sell').innerHTML = data[0].sell
+    document.querySelector('#buy').textContent = data[0].buy
+    // Waiting 
+    btn.textContent = 'تم التحديث'
+    setTimeout(()=>btn.textContent = 'Refresh', 3000)
 }
