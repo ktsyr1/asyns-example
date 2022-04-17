@@ -1,4 +1,4 @@
-let URL = 'https://srflb.vercel.app/api/lb'
+let URL = 'https://pekpay.vercel.app/api/lb'
 /*
     ui
     dom 
